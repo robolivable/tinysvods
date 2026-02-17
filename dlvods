@@ -9,5 +9,3 @@ yt-dlp -a ./vodlinks.txt \
   -o "${PWD}/vods/%(upload_date)s - %(title)s.%(ext)s" \
   2> errors.log
 
-#-f "bestvideo+bestaudio/best" \
-#--playlist-items 650-800 \
