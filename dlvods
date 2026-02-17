@@ -1,0 +1,13 @@
+#!/bin/bash
+yt-dlp -a ./vodlinks.txt \
+  -f "bestvideo[vcodec^=av01]+bestaudio/bestvideo[vcodec^=vp09]+bestaudio/best" \
+  --merge-output-format mkv \
+  --download-archive downloaded_list.txt \
+  --keep-fragments \
+  --fragment-retries infinite \
+  --concurrent-fragments 3 \
+  -o "${PWD}/vods/%(upload_date)s - %(title)s.%(ext)s" \
+  2> errors.log
+
+#-f "bestvideo+bestaudio/best" \
+#--playlist-items 650-800 \
