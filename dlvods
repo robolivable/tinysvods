@@ -1,6 +1,6 @@
 #!/bin/bash
 yt-dlp -a ./vodlinks.txt \
-  -f "bestvideo[vcodec^=av01]+bestaudio/bestvideo[vcodec^=vp09]+bestaudio/best" \
+  -f "bestvideo[height<=1080][vcodec^=av01]+bestaudio/bestvideo[height<=1080][vcodec^=vp09]+bestaudio/bestvideo[height<=1080]+bestaudio/best" \
   --merge-output-format mkv \
   --download-archive downloaded_list.txt \
   --keep-fragments \
