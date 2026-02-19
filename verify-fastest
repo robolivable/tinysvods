@@ -1,0 +1,2 @@
+#!/bin/bash
+find vods -name "*.mkv" -exec sh -c 'echo "$1"; ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 "$1" > /dev/null 2>&1 || echo "TRUNCATED: $1"' _ {} \;
