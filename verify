@@ -1,2 +1,2 @@
 #!/bin/bash
-find vods -name "*.mkv" -exec sh -c 'ffmpeg -v error -i "$1" -f null - > /dev/null 2>&1 || echo "CORRUPT: $1"' _ {} \;
+find vods -name "*.mkv" -exec sh -c 'echo "[checking] $1 ..."; ffmpeg -v error -i "$1" -f null - > /dev/null 2>&1 || echo "CORRUPT: $1"' _ {} \;
